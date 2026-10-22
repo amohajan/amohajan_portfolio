@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Avoy Mohajan — Software Engineer</title>
+<meta name="description" content="Software engineer building resilient, auditable systems for regulated financial services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c1a2b; --bg2:#13263b; --ink:#eef4f5; --muted:#9db3c0; --line:#2a4258;
+  --flare:#ff6a3d; --ice:#9fdde6; --ridge1:#16314a; --ridge2:#0f2236; --ridge3:#0a1726;
+  --star:1;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f3efe7; --bg2:#e7e1d4; --ink:#14212e; --muted:#51606d; --line:#c9c1b0;
+    --flare:#d9431a; --ice:#1d6f80; --ridge1:#b9c9cf; --ridge2:#8fa8b3; --ridge3:#5f7f8f; --star:0;
+  }
+}
+:root[data-theme="light"]{--bg:#f3efe7;--bg2:#e7e1d4;--ink:#14212e;--muted:#51606d;--line:#c9c1b0;--flare:#d9431a;--ice:#1d6f80;--ridge1:#b9c9cf;--ridge2:#8fa8b3;--ridge3:#5f7f8f;--star:0}
+:root[data-theme="dark"]{--bg:#0c1a2b;--bg2:#13263b;--ink:#eef4f5;--muted:#9db3c0;--line:#2a4258;--flare:#ff6a3d;--ice:#9fdde6;--ridge1:#16314a;--ridge2:#0f2236;--ridge3:#0a1726;--star:1}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",sans-serif;line-height:1.05;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--flare);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;padding:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)}
+.hero svg.scene{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;padding-top:120px;padding-bottom:150px;width:100%}
+.hero h1{font-size:clamp(2.8rem,9vw,6.6rem);font-weight:800;max-width:11ch}
+.hero p.lead{max-width:36rem;color:var(--ink);font-size:1.15rem;margin:22px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;border:1.5px solid var(--ink);text-decoration:none;font-weight:500;transition:transform .15s}
+.btn.main{background:var(--flare);border-color:var(--flare);color:#14100d}
+.btn:hover{transform:translateY(-2px)}
+.tag{display:inline-block;margin-bottom:18px;color:var(--ice);font-weight:500}
+.route{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 3.2s .4s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.flag{opacity:0;animation:pop .4s 3.4s forwards}
+@keyframes pop{to{opacity:1}}
+.stars{opacity:var(--star)}
+
+/* altitude gauge */
+.gauge{position:fixed;right:14px;top:50%;transform:translateY(-50%);height:40vh;width:34px;z-index:5;pointer-events:none;text-align:right}
+.gauge .rail{position:absolute;right:6px;top:0;bottom:0;width:3px;background:var(--line);border-radius:3px}
+.gauge .fill{position:absolute;right:6px;bottom:0;width:3px;background:var(--flare);border-radius:3px;height:0}
+.gauge .alt{position:absolute;right:16px;font-size:.72rem;font-weight:500;color:var(--muted);white-space:nowrap;background:var(--bg);padding:2px 6px;border-radius:6px;transform:translateY(50%)}
+@media(max-width:760px){.gauge{display:none}}
+
+/* heading */
+h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;max-width:18ch}
+.sub{color:var(--muted);max-width:40rem;margin:14px 0 48px}
+
+/* about */
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+.stat{border:1.5px solid var(--line);border-radius:18px 4px 18px 4px;padding:18px}
+.stat b{display:block;font-family:"Bricolage Grotesque";font-size:2.2rem;font-weight:800;color:var(--flare);line-height:1}
+.stat span{color:var(--muted);font-size:.92rem}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+
+/* expedition log */
+.log{position:relative;margin-left:8px;padding-left:34px;border-left:3px dashed var(--line)}
+.camp{position:relative;margin-bottom:52px}
+.camp::before{content:"";position:absolute;left:-46px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:4px solid var(--flare)}
+.camp .where{color:var(--ice);font-weight:500;font-size:.95rem}
+.camp h3{font-size:1.7rem;margin:4px 0 2px}
+.camp .meta{color:var(--muted);margin-bottom:12px}
+.camp ul{margin:0;padding-left:1.1em;max-width:46rem}
+.camp li{margin:7px 0}
+.camp.top h3{font-size:2rem}
+.pill{display:inline-block;background:var(--flare);color:#14100d;border-radius:999px;padding:2px 12px;font-size:.85rem;font-weight:500;margin-left:8px;vertical-align:middle}
+
+/* kit */
+.kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.pack{background:var(--bg2);border-radius:6px 26px 6px 26px;padding:24px}
+.pack h3{font-size:1.25rem;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
+
+/* side trails */
+.trails{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.trail{border-top:3px solid var(--flare);padding-top:16px}
+.trail h3{font-size:1.3rem;margin-bottom:6px}
+.trail p{color:var(--muted);margin:0 0 8px}
+.trail a{color:var(--ice)}
+
+/* contact */
+.contact{background:var(--bg2);border-radius:36px 36px 0 0}
+.contact h2{max-width:14ch}
+.links{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.links a{font-size:1.15rem;text-decoration:none;border-bottom:2px solid var(--flare);padding-bottom:2px}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;background:var(--bg2)}
+.theme{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:6;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:.85rem;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.route{animation:none;stroke-dashoffset:0}.flag{animation:none;opacity:1}html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <svg class="scene" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <g class="stars" fill="#eef4f5">
+      <circle cx="120" cy="90" r="1.6"/><circle cx="310" cy="160" r="1.2"/><circle cx="520" cy="70" r="1.8"/>
+      <circle cx="700" cy="140" r="1.3"/><circle cx="880" cy="60" r="1.7"/><circle cx="1050" cy="150" r="1.2"/>
+      <circle cx="1130" cy="80" r="1.5"/><circle cx="220" cy="230" r="1"/><circle cx="960" cy="240" r="1"/>
+    </g>
+    <circle cx="990" cy="170" r="46" fill="var(--flare)" opacity=".85"/>
+    <path d="M0 520 L140 400 L230 470 L380 330 L520 480 L650 380 L800 500 L940 410 L1200 520 L1200 700 L0 700Z" fill="var(--ridge1)"/>
+    <path d="M0 580 L120 500 L260 560 L430 420 L560 540 L720 450 L880 570 L1050 480 L1200 570 L1200 700 L0 700Z" fill="var(--ridge2)"/>
+    <path d="M-10 700 L60 640 L180 660 L330 560 L480 640 L640 520 L820 640 L980 590 L1210 660 L1210 700Z" fill="var(--ridge3)"/>
+    <path class="route" d="M80 690 C180 660 220 640 300 630 S470 600 560 580 S720 560 790 540 S880 470 930 420" fill="none" stroke="var(--flare)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="1400"/>
+    <g class="flag"><path d="M930 420 V372" stroke="var(--ink)" stroke-width="3"/><path d="M930 372 L968 384 L930 396Z" fill="var(--flare)"/></g>
+  </svg>
+  <div class="wrap">
+    <div class="tag">Software engineer · Lansdale, PA · Open to new roles</div>
+    <h1>Avoy Mohajan</h1>
+    <p class="lead">I build and support the systems banks can’t afford to lose: Java services, event-driven pipelines and the controls around them. Five years of climbing through production, from TD Bank at TCS to distributed-systems research.</p>
+    <div class="btns">
+      <a class="btn main" href="#log">Follow the route</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<aside class="gauge" aria-hidden="true">
+  <div class="rail"></div><div class="fill" id="fill"></div>
+  <div class="alt" id="alt" style="bottom:0">0 m</div>
+</aside>
+
+<main>
+<section id="about"><div class="wrap about">
+  <div>
+    <h2>Steady on steep terrain.</h2>
+    <p class="sub" style="margin-bottom:18px">I’m a software engineer with 5+ years across development, production support and automation in regulated financial services. I like work where uptime, audit trails and clean data matter, and I’m just as happy writing the service as I am tracing an incident through Kafka, SQL and logs at 2 a.m.</p>
+    <p class="sub" style="margin:0">M.S. in Computer Science from Oklahoma State University, with peer-reviewed research on secure access control for zero-trust systems.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>5+</b><span>years in enterprise engineering</span></div>
+    <div class="stat"><b>99.9%+</b><span>availability on banking apps supported</span></div>
+    <div class="stat"><b>~35%</b><span>less repetitive ops effort via automation</span></div>
+    <div class="stat"><b>1</b><span>peer-reviewed publication</span></div>
+  </div>
+</div></section>
+
+<section id="log" style="background:var(--bg2)"><div class="wrap">
+  <h2>The expedition log</h2>
+  <p class="sub">Four camps, from banking production support to the summit I’m on now. Most recent first.</p>
+  <div class="log">
+    <div class="camp top">
+      <div class="where">Camp 4 · Dover, DE</div>
+      <h3>Systems Engineer <span class="pill">Now</span></h3>
+      <div class="meta">Uplink Works, LLC · June 2026 – Present</div>
+      <ul>
+        <li>Develop and support backend services, APIs and distributed components in Java, Python, SQL and REST on cloud-native stacks.</li>
+        <li>Design and troubleshoot integrations across APIs, event-driven services, messaging and databases, with an eye on scale, resilience and security.</li>
+        <li>Build automated validation, reconciliation and reporting workflows that improve data quality and production visibility.</li>
+        <li>Join design reviews, releases, incident response and post-production support under strict change-management standards.</li>
+      </ul>
+    </div>
+    <div class="camp">
+      <div class="where">Camp 3 · Fort Worth, TX</div>
+      <h3>Systems Engineer, Intern</h3>
+      <div class="meta">IpserLabs LLC · Nov 2025 – June 2026</div>
+      <ul>
+        <li>Built Kafka and event-driven integrations plus automated data-processing workflows.</li>
+        <li>Used Python, SQL and Spark/PySpark to validate data and surface inconsistencies.</li>
+        <li>Supported CI/CD, integration testing, release validation and monitoring across dev and production.</li>
+      </ul>
+    </div>
+    <div class="camp">
+      <div class="where">Camp 2 · Stillwater, OK</div>
+      <h3>Graduate Research Assistant</h3>
+      <div class="meta">Oklahoma State University · Jan 2024 – May 2025</div>
+      <ul>
+        <li>Designed secure transaction and access-control workflows with auditability, traceability and policy enforcement.</li>
+        <li>Built test frameworks to measure latency, scalability and integrity of distributed systems.</li>
+        <li>Published research on blockchain-based dynamic access control for zero-trust systems.</li>
+      </ul>
+    </div>
+    <div class="camp">
+      <div class="where">Camp 1 · Kolkata, India</div>
+      <h3>Systems Engineer, TD Bank account</h3>
+      <div class="meta">Tata Consultancy Services · Nov 2020 – Aug 2023</div>
+      <ul>
+        <li>Developed and supported business-critical TD Bank applications in Core Java, SQL, REST, Linux/Unix and enterprise middleware.</li>
+        <li>Kept transaction-processing and regulated banking apps above 99.9% availability.</li>
+        <li>Wrote SQL for reconciliation, incident investigation and control verification across financial workflows.</li>
+        <li>Automated monitoring, validation and recurring support in Python, Bash, PowerShell and Jenkins, cutting repetitive effort by about 35%.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="kit"><div class="wrap">
+  <h2>What’s in the pack</h2>
+  <p class="sub">The tools I reach for, grouped by the job they do.</p>
+  <div class="kit">
+    <div class="pack"><h3>Build</h3><div class="chips"><span>Java</span><span>Spring Boot</span><span>REST</span><span>Python</span><span>C#</span><span>Microservices</span></div></div>
+    <div class="pack"><h3>Move data</h3><div class="chips"><span>Kafka</span><span>RabbitMQ</span><span>AWS SQS/SNS</span><span>Kinesis</span><span>EventBridge</span><span>Spark / PySpark</span><span>Databricks</span></div></div>
+    <div class="pack"><h3>Store</h3><div class="chips"><span>Oracle</span><span>SQL Server</span><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>Query tuning</span></div></div>
+    <div class="pack"><h3>Run in the cloud</h3><div class="chips"><span>AWS</span><span>Azure</span><span>GCP</span><span>Docker</span><span>Kubernetes</span><span>OpenShift</span></div></div>
+    <div class="pack"><h3>Ship and watch</h3><div class="chips"><span>Jenkins</span><span>GitHub Actions</span><span>GitLab CI</span><span>Azure DevOps</span><span>Splunk</span><span>Dynatrace</span><span>Grafana</span><span>Datadog</span><span>Prometheus</span></div></div>
+    <div class="pack"><h3>Keep it safe</h3><div class="chips"><span>IAM / RBAC</span><span>AuthN / AuthZ</span><span>Audit trails</span><span>Least privilege</span><span>Vulnerability remediation</span></div></div>
+  </div>
+</div></section>
+
+<section id="trails" style="background:var(--bg2)"><div class="wrap">
+  <h2>Side trails: research and projects</h2>
+  <p class="sub">Work I took on beyond the day job.</p>
+  <div class="trails">
+    <div class="trail"><h3>Security-aware access control</h3><p>Peer-reviewed paper in <i>Electronics</i> (2025): a blockchain-based dynamic access control framework for zero-trust distributed systems, co-authored with S. Jahan.</p><a href="https://doi.org/10.3390/electronics14061095">Read the paper</a></div>
+    <div class="trail"><h3>Insurance management system</h3><p>ASP.NET and Oracle application for policy, claims and customer data. (2020)</p></div>
+    <div class="trail"><h3>Library management system</h3><p>Core Java and SQLite app that automates cataloging, issuing and record keeping. (2019)</p></div>
+  </div>
+  <p class="sub" style="margin:40px 0 0">Education: M.S. Computer Science, Oklahoma State University (3.2/4.0, 2025) · B.Tech Information Technology, Future Institute of Engineering and Management (8.22/10, 2020) · AWS Academy Cloud Foundations graduate.</p>
+</div></section>
+
+<section id="contact" class="contact" style="padding-bottom:72px"><div class="wrap">
+  <h2>Planning the next climb?</h2>
+  <p class="sub" style="margin-bottom:0">If you have a system that has to stay up and stay auditable, I’d like to hear about it.</p>
+  <div class="links">
+    <a href="mailto:avoymohajan@icloud.com">avoymohajan@icloud.com</a>
+    <a href="tel:+14052692384">+1 405 269 2384</a>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 Avoy Mohajan · Lansdale, Pennsylvania</div></footer>
+<button class="theme" id="theme" type="button">Toggle day / night</button>
+
+<script>
+(function(){
+  var fill=document.getElementById('fill'),alt=document.getElementById('alt');
+  function upd(){
+    var h=document.documentElement.scrollHeight-innerHeight;
+    var p=h>0?Math.min(1,Math.max(0,scrollY/h)):0;
+    fill.style.height=(p*100)+'%';
+    alt.style.bottom=(p*100)+'%';
+    alt.textContent=Math.round(p*8848).toLocaleString('en-US')+' m';
+  }
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  var b=document.getElementById('theme'),r=document.documentElement;
+  b.addEventListener('click',function(){
+    var dark=getComputedStyle(r).getPropertyValue('--star').trim()==='1';
+    r.setAttribute('data-theme',dark?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>
